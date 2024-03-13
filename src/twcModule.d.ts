@@ -6,9 +6,9 @@ export interface TwcObject {
 }
 
 /**
- * Converts an object into a formatted text string.
+ * Converts an object into a text plain tailwind classes with prefixes.
  * @param obj The object to convert.
  * @param prefix Optional prefix for properties.
- * @returns The resulting text string.
+ * @returns The resutling text plain tailwind classes with prefixes.
  */
 export function twc(obj: TwcObject, prefix?: string): string;

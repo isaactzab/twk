@@ -6,15 +6,15 @@ export interface TwcObject {
 }
 
 /**
- * Converts an object into a formatted text string.
+ * Converts an object into a text plain tailwind classes with prefixes.
  * @param obj The object to convert.
  * @param prefix Optional prefix for properties.
- * @returns The resulting text string.
+ * @returns The resutling text plain tailwind classes with prefixes.
  */
 export function twc(obj: TwcObject, prefix = ''): string {
     let result = '';
     if (obj.default) { 
-        result = (prefix !== '' ? `${obj['default']} ${prefix}` : obj['default']) + ' ';
+        result = (prefix.length > 0 ? `${obj['default']}`.replace(/([^\s]+)/g, `${prefix}$1`) + '' : obj['default']) + ' ';
     }
 
     for (const key in obj) {
@@ -26,5 +26,5 @@ export function twc(obj: TwcObject, prefix = ''): string {
         }
     }
 
-    return result;
+    return result.trim();
 }
