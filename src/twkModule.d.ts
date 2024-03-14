@@ -1,8 +1,8 @@
 /**
- * Interface for the object passed as an argument to the twio function.
+ * Interface for the object passed as an argument to the twk function.
  */
-export interface TwioObject {
-    [key: string]: string | TwioObject;
+export interface TwkObject {
+    [key: string]: string | TwkObject;
 }
 
 /**
@@ -11,4 +11,4 @@ export interface TwioObject {
  * @param prefix Optional prefix for properties.
  * @returns The resutling text plain tailwind classes with prefixes.
  */
-export function twio(obj: TwioObject, prefix?: string): string;
+export function twk(obj: TwkObject, prefix?: string): string;
