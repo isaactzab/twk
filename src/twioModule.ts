@@ -1,8 +1,8 @@
 /**
- * Interface for the object passed as an argument to the twc function.
+ * Interface for the object passed as an argument to the twio function.
  */
-export interface TwcObject {
-    [key: string]: string | TwcObject;
+export interface TwioObject {
+    [key: string]: string | TwioObject;
 }
 
 /**
@@ -11,7 +11,7 @@ export interface TwcObject {
  * @param prefix Optional prefix for properties.
  * @returns The resutling text plain tailwind classes with prefixes.
  */
-export function twc(obj: TwcObject, prefix = ''): string {
+export function twio(obj: TwioObject, prefix = ''): string {
     let result = '';
     if (obj.default) { 
         result = (prefix.length > 0 ? `${obj['default']}`.replace(/([^\s]+)/g, `${prefix}$1`) + '' : obj['default']) + ' ';
@@ -21,7 +21,7 @@ export function twc(obj: TwcObject, prefix = ''): string {
         if (key !== 'default') {
             const value = obj[key];
             result += typeof value === 'object' && !Array.isArray(value)
-                ? twc(value, `${prefix}${key}:`)
+                ? twio(value, `${prefix}${key}:`)
                 : `${value}`.replace(/([^\s]+)/g, `${prefix}${key}:$1`) + ' ';
         }
     }

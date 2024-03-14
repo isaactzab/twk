@@ -1,29 +1,29 @@
-# TWC (Tailwind CSS Organizer for React)
+# TWIO (Before known as twc)
 
-TWC (Tailwind CSS Organizer for React) is a utility library designed to simplify the organization of Tailwind CSS classes for React components. With TWC, you can define a structured object representing different prefixes for your classes, making it easier to manage and maintain complex class compositions.
+TWIO (Before known as twc) is a utility library designed to simplify the organization of Tailwind CSS classes for React components. With TWIO, you can define a structured object representing different prefixes for your classes, making it easier to manage and maintain complex class compositions.
 
 ## Installation
 
-You can install TWC via npm:
+You can install TWIO via npm:
 
 ```bash
-npm install twc
+npm install twio
 ```
 
 or using yarn:
 
 ```bash
-yarn add twc
+yarn add twio
 ```
 
 ## How it Works
 
-The main function `twc()` takes an object as input, which represents the class prefixes for various elements. Each element in the object can have multiple levels of nesting, allowing for granular control over class organization. Additionally, elements with the key `"default"` represent classes that don't require any additional prefixes, except for inherited ones.
+The main function `twio()` takes an object as input, which represents the class prefixes for various elements. Each element in the object can have multiple levels of nesting, allowing for granular control over class organization. Additionally, elements with the key `"default"` represent classes that don't require any additional prefixes, except for inherited ones.
 
 ## Example
 
 ```javascript
-import { twc } from 'twc';
+import { twio } from 'twio';
 
 const classes = {
   button: {
@@ -38,7 +38,7 @@ const classes = {
   },
 };
 
-const buttonClasses = twc(classes.button); // Prefix all classes for buttons with 'btn:'
+const buttonClasses = twio(classes.button); // Prefix all classes for buttons with 'btn:'
 
 console.log(buttonClasses);
 // Output: 'bg-blue-500 text-white dark:rounded-lg dark:px-4 dark:py-2 hover:border hover:border-blue-500'
@@ -51,4 +51,4 @@ Contributions are welcome! If you have any suggestions, improvements, or bug fix
 
 ## License
 
-TWC is licensed under the MIT License. See the [LICENSE](link-to-license) file for details.
+TWIO is licensed under the MIT License. See the [LICENSE](link-to-license) file for details.

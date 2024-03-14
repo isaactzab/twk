@@ -1,4 +1,4 @@
-import { twc } from '../index';
+import { twio } from '../index';
 
 describe('valid object', () => {    
     let valid_class_object;  
@@ -20,6 +20,6 @@ describe('valid object', () => {
     });
 
     test('should match object output with class string', () => {
-        expect( twc(valid_class_object) ).toBe(valid_class_string);
+        expect( twio(valid_class_object) ).toBe(valid_class_string);
     })
 });

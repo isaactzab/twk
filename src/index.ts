@@ -1,3 +1,3 @@
-export { twc } from './twcModule';
-import { twc } from './twcModule';
-export default twc;
+export { twio } from './twioModule';
+import { twio } from './twioModule';
+export default twio;
