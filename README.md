@@ -42,6 +42,65 @@ const buttonClasses = twk(classes.button); // Prefix all classes for buttons wit
 
 console.log(buttonClasses);
 // Output: 'bg-blue-500 text-white dark:rounded-lg dark:px-4 dark:py-2 hover:border hover:border-blue-500'
+```
+
+
+## Using in react
+
+Used directly in the html element classname property
+
+```javascript
+import React from 'react'
+import { twk } from 'twk';
+
+function MyCustomButton() {
+
+  return (
+    <button className={twk({
+        default: 'bg-blue-500 text-white',
+        dark: 'rounded-lg px-4 py-2',
+        hover: 'border border-blue-500',
+    })}>Custom Button</button>
+  )
+}
+```
+
+Used by defining the classes in a constant
+```javascript
+import React from 'react'
+import { twk } from 'twk';
+
+const customButtonClasses = {
+    default: 'bg-blue-500 text-white',
+    dark: 'rounded-lg px-4 py-2',
+    hover: 'border border-blue-500',
+}
+
+function MyCustomButton() {
+
+  return (<>
+        <button className={twk(customButtonClasses)}>Custom Button</button>
+        <button className={twk(customButtonClasses)}>Custom Button1</button>
+        <button className={twk(customButtonClasses)}>Custom Button2</button>
+    </>
+  )
+}
+```
+
+Used by isolating the classes object in an external import.
+```javascript
+import React from 'react'
+import { twk } from 'twk';
+import { customButtonClasses } from './constants/classes';
+
+function MyCustomButton() {
+
+  return (<>
+        <button className={twk(customButtonClasses)}>Custom Button</button>
+        <button className={twk(customButtonClasses)}>Custom Button1</button>
+        <button className={twk(customButtonClasses)}>Custom Button2</button>
+    </>
+}
 
 ```
 
