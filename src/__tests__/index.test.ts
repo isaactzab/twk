@@ -1,8 +1,8 @@
-import { twk, TWClassesToTWObject } from '../index';
+import { twk, TWClassesToTWObject,  TwkObject } from '../index';
 
 describe('TW Object to TW Classes', () => {    
-    let valid_class_object: any;
-    let valid_class_string: any;
+    let valid_class_object:  TwkObject;
+    let valid_class_string: string;
     
     beforeAll(() => {
         valid_class_object = {
@@ -24,8 +24,8 @@ describe('TW Object to TW Classes', () => {
 });
 
 describe('TW Classes to TW Object', () => {    
-    let valid_class_object: any;
-    let valid_class_string: any;
+    let valid_class_object:  TwkObject;
+    let valid_class_string: string;
     
     beforeAll(() => {
         valid_class_object = {

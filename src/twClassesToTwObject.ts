@@ -1,3 +1,5 @@
+import { TwkObject } from "./twkModule";
+
 const isString = (s: unknown): boolean => typeof s === 'string';
 
 /**
@@ -14,7 +16,7 @@ function assignValue(target: Record<string, unknown>, value: unknown, path: stri
         const key = path[i];
         const isLastElement = i === path.length - 1;
 
-        if (!current.hasOwnProperty(key)) {
+        if (!current[key]) {
             current[key] = isLastElement ? value : {};
         } else if (isString(current[key])) {
             current[key] = isLastElement ? `${current[key]} ${value}` : { default: current[key] };
@@ -33,11 +35,11 @@ function assignValue(target: Record<string, unknown>, value: unknown, path: stri
  * @param twClasses A space-separated string of Tailwind CSS classes.
  * @returns An object representing the classes.
  */
-export const TWClassesToTWObject = (twClasses: string): Record<string, unknown> => {
-    const results: Record<string, unknown> = {};
+export const TWClassesToTWObject = (twClasses: string):  TwkObject => {
+    const results:  TwkObject = {};
     twClasses.split(' ').map((w) => {
         let classPrefixPath = w.split(':');
-        let finalClass = classPrefixPath.pop();
+        const finalClass = classPrefixPath.pop();
         classPrefixPath = classPrefixPath.length > 0 ? classPrefixPath : ['default'];
 
         assignValue(results, finalClass, classPrefixPath);

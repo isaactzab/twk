@@ -1,4 +1,4 @@
-export { twk } from './twkModule';
+export { twk,  TwkObject } from './twkModule';
 export { TWClassesToTWObject } from './twClassesToTwObject';
 
 import { twk } from './twkModule';
