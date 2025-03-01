@@ -104,6 +104,25 @@ function MyCustomButton() {
 
 ```
 
+
+## Converting from classes to TwkObject
+To convert a Tailwind CSS classes to an TwkObject use the function `TWClassesToTWObject()`
+
+### You can use it now in this [page](https://isaactzab.github.io/twk/index.html)!
+
+
+```javascript
+import { TWClassesToTWObject } from 'twk';
+
+const classes = 'bg-blue-500 text-white dark:rounded-lg dark:px-4 dark:py-2 hover:border hover:border-blue-500';
+
+const twkObject = TWClassesToTWObject(classes);
+
+console.log(twkObject);
+// Output: { default: 'bg-blue-500 text-white', dark: 'rounded-lg px-4 py-2', hover: 'border border-blue-500' }
+```
+
+
 ## Contributing
 
 Contributions are welcome! If you have any suggestions, improvements, or bug fixes, feel free to open an issue or submit a pull request.

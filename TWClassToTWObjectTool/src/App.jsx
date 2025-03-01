@@ -60,7 +60,7 @@ const App = () => {
           value={input}
           onClick={handleTextareaClick}
           onChange={handleTextareaChange}
-          placeholder="Pega aquí el código..."
+          placeholder="Paste your Tailwind classes..."
           className="w-full p-4 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           rows={5}
         />
@@ -72,7 +72,7 @@ const App = () => {
             onClick={handleCopy}
             className="absolute top-2 right-2 bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 focus:outline-none"
           >
-            Copiar
+            Copy
           </button>
         </div>
       </div>
